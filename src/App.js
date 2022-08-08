@@ -1,22 +1,14 @@
-import React, { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import { Routes, Route } from 'react-router-dom';
+
+
 import "./App.css";
+import Home from './routes/home/home.component';
 
 function App() {
-  const [markdown, setMarkdown] = useState('');
   return (
-    <div>
-      <section className="markdown">
-        <textarea
-          className="input"
-          value={markdown}
-          onChange={(event) => setMarkdown(event.target.value)}>
-        </textarea>
-        <article className="output">
-          <ReactMarkdown>{markdown}</ReactMarkdown>
-        </article>
-      </section>
-    </div>
+    <Routes>
+      <Route path='/' element={<Home />} />
+    </Routes>
   );
 }
 
